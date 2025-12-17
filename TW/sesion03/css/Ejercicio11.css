@@ -1,0 +1,7 @@
+div.etiqueta label.styled {
+    float: left;
+    width: 150px;
+    text-transform: uppercase;
+    border-bottom: 1px solid red;
+    margin-right: 15px;
+}

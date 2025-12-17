@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Histórico de Puntuaciones - Rutas Extremadura</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../RutaExtremadura.html">Inicio</a></li>
+                <li><a href="rutas.html" onclick="showSection('rutas')">Rutas</a></li>
+                <li><a href="novedades.html" onclick="showSection('novedades')">Novedades</a></li>
+                <li><a href="reservas.html" onclick="showSection('reservas')">Reservas</a></li>
+                <li><a href="historico.html" onclick="showSection('historico')">Histórico de Puntuaciones</a></li>
+                <li><a href="conecta4.html" onclick="showSection('conecta4')">Conecta4</a></li>
+                <li><a href="bibliografia.html" onclick="showSection('bibliografia')">Bibliografía</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="historico">
+            <h2>Histórico de Puntuaciones</h2>
+            <div id="info">
+                <!-- Aquí se mostrará el título, descripción y última modificación -->
+            </div>
+            <div id="scores">
+                <p>Cargando puntuaciones...</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Rutas Extremadura. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('https://programacion-cum.unex.es/Ranking.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta de la URL: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Mostrar título, descripción y última modificación
+                    const infoDiv = document.getElementById('info');
+                    infoDiv.innerHTML = `
+                        <h3>${data.title}</h3>
+                        <p>${data.description}</p>
+                        <p><strong>Última Modificación:</strong> ${new Date(data.UltimaModificacion.value).toLocaleString()}</p>
+                    `;
+
+                    // Mostrar el ranking de jugadores
+                    const posiciones = data.posiciones;
+                    if (posiciones) {
+                        const scoresDiv = document.getElementById('scores');
+                        scoresDiv.innerHTML = '<ul>' + 
+                            Object.keys(posiciones).map(key => {
+                                const jugador = posiciones[key];
+                                return `<li><strong>${key}:</strong> ${jugador.nombre} - ${jugador.valor} puntos (Fecha: ${new Date(jugador.fecha).toLocaleDateString()})</li>`;
+                            }).join('') + 
+                            '</ul>';
+                    } else {
+                        throw new Error('Datos no válidos recibidos de la API');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching scores:', error);
+                    document.getElementById('scores').innerHTML = '<p>Error al cargar las puntuaciones. Por favor, inténtelo más tarde.</p>';
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>HolidaysinExtremadura.com</title>
+</head>
+<body>
+    <h1>Agencia de viajes de Extremadura</h1>
+    <nav>
+        <ul>
+            <li><a href="#hoteles">Hoteles</a></li>
+            <li><a href="#rutas">Rutas</a></li>
+            <li><a href="#pack">Pack</a></li>
+            <li><a href="#reserva">Reserva</a></li>
+        </ul>
+    </nav>
+
+    <section id="hoteles">
+        <h2>Hoteles</h2>
+        <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Ubicación</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Contacto</th>
+            </tr>
+            <tr>
+                <td>Hotel Extremadura</td>
+                <td>Cáceres</td>
+                <td>80€/noche</td>
+                <td><img src="hotel.jpeg" alt="Hotel Extremadura" width="200"></td>
+                <td>TEL: 940 123 654</td>
+            </tr>
+            <tr>
+                <td>Hotel Mérida Palace</td>
+                <td>Mérida</td>
+                <td>100€/noche</td>
+                <td><img src="hotel2.jpeg" alt="Hotel Mérida Palace" width="200"></td>
+                <td>TEL: 940 777 140</td>
+            </tr>
+            <tr>
+                <td>Hotel Cervantes</td>
+                <td>Badajoz</td>
+                <td>90€/noche</td>
+                <td><img src="hotel3.jpeg" alt="Hotel Cervantes" width="200"></td>
+                <td>TEL: 652 765 123</td>
+            </tr>
+            <tr>
+                <td>Parador de Plasencia</td>
+                <td>Plasencia</td>
+                <td>100€/noche</td>
+                <td><img src="hotel4.jpeg" alt="Parador de Plasencia" width="200"></td>
+                <td>TEL: 655 485 136</td>
+            </tr>
+            <tr>
+                <td>Hotel Boutique IULIA</td>
+                <td>Zafra</td>
+                <td>86€/noche</td>
+                <td><img src="hotel5.jpeg" alt="Hotel Boutique IULIA" width="200"></td>
+                <td>TEL: 640 165 764</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="rutas">
+        <h2>Rutas</h2>
+        <ul>
+            <li><a href="https://www.rutadelaplata.com">Ruta de la Plata</a> - Una ruta histórica que atraviesa Extremadura.</li>
+            <li><a href="https://www.rutaconquistadores.com">Ruta de los Conquistadores</a> - Descubre los lugares de origen de los grandes conquistadores.</li>
+            <li><a href="https://viajerosocultos.com/ruta-de-castillos-en-espana/">Ruta de Castillos en España</a> - Viaja los sitio con mayor cantidad de castillos.</li>
+        </ul>
+    </section>
+
+    <section id="pack">
+        <h2>Pack</h2>
+        <p>Para más información, envíenos un correo a <a href="mailto:info@viajeporextremadura.ext">info@viajeporextremadura.ext</a></p>
+        <p>Visite nuestras páginas asociadas:</p>
+        <ul>
+            <li><a href="https://www.getyourguide.es/-l143069/?cmp=bing&cmp=bing&ad_id=78477847185508&adgroup_id=1255642926780300&bid_match_type=bb&campaign_id=710111499&device=c&feed_item_id=&keyword=turismo%20extremadura&loc_interest_ms=133580&loc_physical_ms=164663&match_type=e&msclkid=5ceebf5a2eac1d56cb41d8fff9983967&network=o&partner_id=CD951&target_id=kwd-78478100322423&utm_adgroup=lc%3D143069%3Aextremadura,%20spain%7Cfn%3Df3%7Cci%3D937%3Athings%20to%20do&utm_campaign=dc%3D21%3Aes%7Clc%3D143069%3Aextremadura,%20spain%7Cct%3Dcore%7Cln%3D109%3Aes%7Ctc%3Dall&utm_keyword=turismo%20extremadura&utm_medium=paid_search&utm_query=turismo%20extremadura&utm_source=bing">Turismo Extremadura</a></li>
+            <li><a href="https://www.rentalcars.com/en/country/es/?affiliateCode=msn_new_ob&preflang=en&label=:mdmsn-Q21M9pKcyf0ayBlEdAC7kg:tyS:ai75660202559068:caRegions%20-%20Spain:mecpc:sobing:teQ21M9pKcyf0ayBlEdAC7kg&msclkid=11e8aa130ba313b688fecdb6dcdb19f7">Extremadura Travel</a></li>
+        </ul>
+    </section>
+
+    <section id="reserva">
+        <h2>Reserva</h2>
+        <form action="http://programacion-cum.unex.es:8080/request.jsp" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="Nombre" required><br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="Email" required><br>
+            <label for="hotel">Hotel:</label>
+            <select id="hotel" name="Hotel">
+                <option value="Hotel Extremadura">Hotel Extremadura</option>
+                <option value="Hotel Merida Palace">Hotel Mérida Palace</option>
+                <option value="Hotel Cervantes Badajoz">Hotel Cervantes</option>
+                <option value="Parador de Plasencia">Parador de Plasencia</option>
+                <option value="Hotel Boutique IULIA Zafra">Hotel Boutique IULIA</option>
+            </select><br>
+            <label for="fecha">Fecha de entrada:</label>
+            <input type="date" id="fecha" name="Fecha" required><br>
+            <label for="persona">Número de persona:</label>
+            <input type="number" id="persona" name="Persona" min="1" required><br>
+            <label for="noches">Número de noches:</label>
+            <input type="number" id="noches" name="Noches" min="1" required><br>
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" placeholder="Escribe tus comentarios aquí... (OPCIONAL)" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Reservar">
+        </form>
+    </section>
+</body>
+</html>

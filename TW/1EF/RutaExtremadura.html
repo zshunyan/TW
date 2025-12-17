@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Rutas Extremadura</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        showSection('rutas'); // Muestra la sección de rutas por defecto al cargar la página
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('rutas')">Rutas</a></li>
+        <li><a href="#" onclick="showSection('novedades')">Novedades</a></li>
+        <li><a href="#" onclick="showSection('reservas')">Reservas</a></li>
+        <li><a href="#" onclick="showSection('historico')">Histórico de Puntuaciones</a></li>
+        <li><a href="#" onclick="showSection('conecta4')">Conecta4</a></li>
+        <li><a href="#" onclick="showSection('bibliografia')">Bibliografía</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="rutas">
+      <h2>Rutas</h2>
+      <!-- Contenido de Rutas -->
+    </section>
+    <section id="novedades" style="display:none;">
+      <h2>Novedades</h2>
+      <!-- Contenido de Novedades -->
+    </section>
+    <section id="reservas" style="display:none;">
+      <h2>Reservas</h2>
+      <!-- Contenido de Reservas -->
+    </section>
+    <section id="historico" style="display:none;">
+      <h2>Histórico de Puntuaciones</h2>
+      <!-- Contenido de Histórico de Puntuaciones -->
+    </section>
+    <section id="conecta4" style="display:none;">
+      <h2>Conecta4</h2>
+      <!-- Contenido de Conecta4 -->
+    </section>
+    <section id="bibliografia" style="display:none;">
+      <h2>Bibliografía</h2>
+      <ul>
+        <li><a href="https://www.caracolviajero.com.es/blog/ruta-por-extremadura-en-coche-de-10-dias" target="_blank">Ruta por Extremadura en coche</a></li>
+        <li><a href="https://www.turismoextremadura.com/" target="_blank">Turismo Extremadura</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <!-- Pie de página -->
+  </footer>
+</body>
+</html>
