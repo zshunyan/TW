@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Conecta4 - Rutas Extremadura</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/conecta4.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../RutaExtremadura.html">Inicio</a></li>
+                <li><a href="rutas.html" onclick="showSection('rutas')">Rutas</a></li>
+                <li><a href="novedades.html" onclick="showSection('novedades')">Novedades</a></li>
+                <li><a href="reservas.html" onclick="showSection('reservas')">Reservas</a></li>
+                <li><a href="historico.html" onclick="showSection('historico')">Histórico de Puntuaciones</a></li>
+                <li><a href="conecta4.html" onclick="showSection('conecta4')">Conecta4</a></li>
+                <li><a href="bibliografia.html" onclick="showSection('bibliografia')">Bibliografía</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Conecta4</h2>
+        <p>Conecta4 es un juego de estrategia para dos jugadores. El objetivo es ser el primero en alinear <b>4</b> fichas consecutivas en horizontal, vertical o diagonal dentro del tablero.</p>
+        <p>El tablero tiene un tamaño de <b>7 columnas</b> y <b>6 filas</b>. Los jugadores se turnan para colocar sus fichas en las columnas. La ficha caerá hasta la posición más baja disponible en la columna seleccionada.</p>
+        <p>¡Buena suerte y que gane el mejor!</p>
+        <div id="game-info">
+            <p id="turno">Turno del jugador 1 (Rojo)</p>
+            <p id="ganador"></p>
+            <p id="empate"></p>
+        </div>
+        <div id="game-container">
+            <table id="game-board">
+                <!-- El tablero se generará aquí -->
+            </table>
+            <button id="restart-button" onclick="reiniciar()">Reiniciar Juego</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Rutas Extremadura. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            iniciarMatriz();
+            crearTablero();
+        });
+    </script>
+</body>
+</html>
