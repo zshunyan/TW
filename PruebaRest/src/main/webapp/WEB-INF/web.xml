@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+	version="5.0">
+	<display-name>EjemploRest</display-name>
+
+	<servlet>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>es.unex.cum.tw.rest</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	 <filter>
+     <filter-name>CorsFilter</filter-name>
+     <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+     <init-param>
+        <param-name>cors.allowed.origins</param-name>
+        <param-value>*</param-value> <!-- O un dominio específico -->
+     </init-param>
+    <init-param>
+        <param-name>cors.allowed.methods</param-name>
+        <param-value>GET, POST, PUT, DELETE, OPTIONS</param-value>
+    </init-param>
+    <init-param>
+         <param-name>cors.allowed.headers</param-name>
+         <param-value>Content-Type, Authorization</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cors.allow.credentials</param-name>
+         <param-value>true</param-value> <!-- para enviar cookies (sesiones) -->
+   </init-param>
+  </filter>
+  <filter-mapping>
+     <filter-name>CorsFilter</filter-name>
+     <url-pattern>/rest/*</url-pattern> <!-- Aplica a toda la aplicación -->
+  </filter-mapping>
+	
+</web-app>
